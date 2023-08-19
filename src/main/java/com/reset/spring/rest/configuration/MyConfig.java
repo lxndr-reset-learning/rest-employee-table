@@ -6,9 +6,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.http.MediaType;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 import java.util.Properties;
 
@@ -16,7 +19,7 @@ import java.util.Properties;
 @EnableTransactionManagement
 @ComponentScan("com.reset.spring.rest")
 @PropertySource("classpath:application.properties")
-public class MyConfig {
+public class MyConfig extends WebMvcConfigurationSupport {
 
     @Value("${database.url}")
     private String databaseURL;
@@ -54,7 +57,10 @@ public class MyConfig {
         return dataSource;
     }
 
-
+    @Override
+    public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+        configurer.defaultContentType(MediaType.APPLICATION_JSON);
+    }
     @Bean
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
