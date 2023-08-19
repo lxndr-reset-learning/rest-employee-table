@@ -59,7 +59,7 @@ public class MyConfig {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("com.reset.spring.rest.configuration.entity");
+        sessionFactory.setPackagesToScan("com.reset.spring.rest.entity");
         Properties hibernateProperties = getHibernateProperties();
         sessionFactory.setHibernateProperties(hibernateProperties);
 

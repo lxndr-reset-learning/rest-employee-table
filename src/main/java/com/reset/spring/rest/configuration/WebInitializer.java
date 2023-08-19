@@ -1,7 +1,9 @@
 package com.reset.spring.rest.configuration;
 
 
+import org.springframework.http.MediaType;
 import org.springframework.lang.NonNullApi;
+import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
