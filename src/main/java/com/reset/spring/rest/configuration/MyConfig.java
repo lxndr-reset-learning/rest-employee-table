@@ -19,7 +19,7 @@ import java.util.Properties;
 @EnableTransactionManagement
 @ComponentScan("com.reset.spring.rest")
 @PropertySource("classpath:application.properties")
-public class MyConfig extends WebMvcConfigurationSupport {
+public class MyConfig extends  WebMvcConfigurationSupport{
 
     @Value("${database.url}")
     private String databaseURL;
@@ -57,6 +57,12 @@ public class MyConfig extends WebMvcConfigurationSupport {
         return dataSource;
     }
 
+    /**
+     * Configures the content negotiation for the application.
+     * Sets the default content type to be used when a requested media type is not specified.
+     *
+     * @param configurer the content negotiation configurer
+     */
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
         configurer.defaultContentType(MediaType.APPLICATION_JSON);

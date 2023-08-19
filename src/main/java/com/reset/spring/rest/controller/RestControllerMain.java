@@ -19,10 +19,9 @@ public class RestControllerMain {
     private EmployeeService employeeService;
 
     @GetMapping("/employees")
-    @ResponseBody
     public List<Employee> showAllEmployees(){
-
-        return employeeService.getAllEmployees();
+        List<Employee> allEmployees = employeeService.getAllEmployees();
+        return allEmployees;
     }
 
 //    @GetMapping("/employees/{id}")
