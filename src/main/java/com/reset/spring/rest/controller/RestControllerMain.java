@@ -4,27 +4,30 @@ package com.reset.spring.rest.controller;
 import com.reset.spring.rest.entity.Employee;
 import com.reset.spring.rest.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api") //useless, but a good practice
+@RequestMapping(value = "api", produces = MediaType.APPLICATION_JSON_VALUE) //useless, but a good practice
 public class RestControllerMain {
 
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping("/employees")
-    public List<Employee> showAllEmployees(){
-        List<Employee> allEmployees = employeeService.getAllEmployees();
-        return allEmployees;
+    @GetMapping(value = "/employees")
+    public List<Employee> showAllEmployees() {
+        return employeeService.getAllEmployees();
     }
 
-//    @GetMapping("/employees/{id}")
+    @GetMapping("/employees/{id}")
+    public Employee showEmployeeById(@PathVariable(value = "id") int id) { // Reading data from url (in {}, not like "data=". For these we use @RequestParam))
+        return employeeService.getEmployeeById(id);
+    }
 
 
 }
