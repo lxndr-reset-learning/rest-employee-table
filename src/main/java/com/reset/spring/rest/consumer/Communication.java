@@ -18,12 +18,18 @@ public class Communication {
 
     public List<Employee> getAllEmployees() {
         ResponseEntity<List<Employee>> responseEntity = restTemplate.exchange(URL, HttpMethod.GET, null,
-                new ParameterizedTypeReference<List<Employee>>() {}); //Helper method, handy for transferring generics
+                new ParameterizedTypeReference<List<Employee>>() {
+                }); //Helper method, handy for transferring generics
+
         return responseEntity.getBody(); //Getting the list from body
     }
 
     public Employee getEmployee(int id) {
-        return null;
+        ResponseEntity<Employee> exchange = restTemplate.exchange(URL + "/%d".formatted(id),
+                HttpMethod.GET, null, new ParameterizedTypeReference<Employee>() {
+                });
+
+        return exchange.getBody();
     }
 
     public void saveEmployee(Employee employee) {

@@ -12,6 +12,4 @@ public class ConsumerConfiguration {
     public RestTemplate restTemplate(){
         return new RestTemplate();
     }
-
-
 }
