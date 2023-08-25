@@ -1,4 +1,4 @@
-package com.reset.spring.rest.consumer;
+package com.reset.spring.rest.consumer.api_app_communication;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
