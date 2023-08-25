@@ -35,7 +35,17 @@ public class RestControllerMain {
 
     @PostMapping("/employees")
     public Employee addEmployee(@RequestBody Employee employee) {
-
         return employeeService.saveEmployee(employee);
+    }
+
+    @PutMapping("/employees") // id stores in request body
+    public Employee updateEmployee(@RequestBody Employee employee) {
+        return employeeService.saveEmployee(employee);
+    }
+
+    @DeleteMapping("employees/{id}")
+    public List<Employee> deleteEmployeeById(@PathVariable(value = "id") int id) {
+        employeeService.deleteEmployeeById(id);
+        return showAllEmployees();
     }
 }
