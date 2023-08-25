@@ -1,9 +1,9 @@
-package com.reset.spring.rest.controller;
+package com.reset.spring.rest.server.controller;
 
 
-import com.reset.spring.rest.entity.Employee;
-import com.reset.spring.rest.exception_handling.exception.NoSuchEmployeeException;
-import com.reset.spring.rest.service.EmployeeService;
+import com.reset.spring.rest.server.entity.Employee;
+import com.reset.spring.rest.server.exception_handling.exception.NoSuchEmployeeException;
+import com.reset.spring.rest.server.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

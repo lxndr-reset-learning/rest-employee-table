@@ -1,4 +1,4 @@
-package com.reset.spring.rest.entity;
+package com.reset.spring.rest.server.entity;
 
 
 import jakarta.persistence.*;

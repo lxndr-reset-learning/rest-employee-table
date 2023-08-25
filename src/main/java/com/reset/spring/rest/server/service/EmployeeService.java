@@ -1,7 +1,7 @@
-package com.reset.spring.rest.service;
+package com.reset.spring.rest.server.service;
 
 
-import com.reset.spring.rest.entity.Employee;
+import com.reset.spring.rest.server.entity.Employee;
 
 import java.util.List;
 

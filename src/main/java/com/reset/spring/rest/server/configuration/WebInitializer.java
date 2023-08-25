@@ -1,9 +1,6 @@
-package com.reset.spring.rest.configuration;
+package com.reset.spring.rest.server.configuration;
 
 
-import org.springframework.http.MediaType;
-import org.springframework.lang.NonNullApi;
-import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -14,7 +11,7 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{MyConfig.class};
+        return new Class[]{ServerConfiguration.class};
     }
 
     @Override

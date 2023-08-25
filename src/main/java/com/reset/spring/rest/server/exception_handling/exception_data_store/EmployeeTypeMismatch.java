@@ -1,4 +1,4 @@
-package com.reset.spring.rest.exception_handling.exception_data_store;
+package com.reset.spring.rest.server.exception_handling.exception_data_store;
 
 import lombok.Data;
 

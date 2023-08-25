@@ -1,4 +1,4 @@
-package com.reset.spring.rest.configuration;
+package com.reset.spring.rest.server.configuration;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,9 +15,9 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("com.reset.spring.rest")
-@PropertySource("classpath:application.properties")
-public class MyConfig extends  WebMvcConfigurationSupport{
+@ComponentScan("com.reset.spring.rest.server")
+@PropertySource("classpath:server.properties")
+public class ServerConfiguration extends WebMvcConfigurationSupport {
 
     @Value("${database.url}")
     private String databaseURL;
@@ -59,7 +59,7 @@ public class MyConfig extends  WebMvcConfigurationSupport{
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("com.reset.spring.rest.entity");
+        sessionFactory.setPackagesToScan("com.reset.spring.rest.server.entity");
         Properties hibernateProperties = getHibernateProperties();
         sessionFactory.setHibernateProperties(hibernateProperties);
 

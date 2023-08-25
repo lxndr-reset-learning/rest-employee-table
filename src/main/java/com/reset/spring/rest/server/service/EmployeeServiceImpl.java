@@ -1,8 +1,8 @@
-package com.reset.spring.rest.service;
+package com.reset.spring.rest.server.service;
 
 
-import com.reset.spring.rest.dao.EmployeeDAO;
-import com.reset.spring.rest.entity.Employee;
+import com.reset.spring.rest.server.dao.EmployeeDAO;
+import com.reset.spring.rest.server.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

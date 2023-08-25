@@ -1,8 +1,8 @@
-package com.reset.spring.rest.exception_handling;
+package com.reset.spring.rest.server.exception_handling;
 
-import com.reset.spring.rest.exception_handling.exception.NoSuchEmployeeException;
-import com.reset.spring.rest.exception_handling.exception_data_store.EmployeeIncorrectData;
-import com.reset.spring.rest.exception_handling.exception_data_store.EmployeeTypeMismatch;
+import com.reset.spring.rest.server.exception_handling.exception.NoSuchEmployeeException;
+import com.reset.spring.rest.server.exception_handling.exception_data_store.EmployeeIncorrectData;
+import com.reset.spring.rest.server.exception_handling.exception_data_store.EmployeeTypeMismatch;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
