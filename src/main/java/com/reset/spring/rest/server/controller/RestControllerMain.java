@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "api", produces = MediaType.APPLICATION_JSON_VALUE) //useless, but a good practice
+@RequestMapping(value = "api/server", produces = MediaType.APPLICATION_JSON_VALUE) //useless, but a good practice
 public class RestControllerMain {
 
     @Autowired

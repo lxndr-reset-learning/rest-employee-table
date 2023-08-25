@@ -1,28 +1,19 @@
-package com.reset.spring.rest.server.entity;
+package com.reset.spring.rest.consumer.entity;
 
 
-import jakarta.persistence.*;
 import lombok.Data;
 
+//we don't bind this entity to database, so we don't need all these annotations that persist in Sever part
 @Data
-@Entity
-@Table(name = "employee")
 public class Employee {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private int id;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "surname")
     private String surname;
 
-    @Column(name = "department")
     private String department;
 
-    @Column(name = "salary")
     private int salary;
 
     public Employee() {
